@@ -25,6 +25,7 @@ void DoubleArray_Destroy(DoubleArray* array) {
     if (array != NULL) {
         free(array->items);
         free(array);
+        array = NULL;
     }
 }
 

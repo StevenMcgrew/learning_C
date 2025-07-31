@@ -25,6 +25,7 @@ void IntArray_Destroy(IntArray* array) {
     if (array != NULL) {
         free(array->items);
         free(array);
+        array = NULL;
     }
 }
 

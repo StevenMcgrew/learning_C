@@ -3,15 +3,22 @@
 
 
 
-int main()
-{
+int main() {
 
+    String* myString1 = String_Create("Hello, ");
+    String* myString2 = String_Create("World!");
     
-    String* myStr = String_Create("Happy Birthday to you!");
+    printf("String content: %s\n", myString1->chars);
+    printf("String length: %d\n", myString1->length);
+    printf("String content: %s\n", myString2->chars);
+    printf("String length: %d\n", myString2->length);
 
-    printf("length: %d\nstring: %s\n", myStr->length, myStr->chars);
+    String* combined = String_Concat_And_Destroy(myString1, myString2);
 
-    String_Destroy(myStr);
-
+    printf("Combined content: %s\n", combined->chars);
+    printf("Combined length: %d\n", combined->length);
+    
+    String_Destroy(combined);
+    
     return 0;
 }

@@ -25,6 +25,7 @@ void FloatArray_Destroy(FloatArray* array) {
     if (array != NULL) {
         free(array->items);
         free(array);
+        array = NULL;
     }
 }
 
